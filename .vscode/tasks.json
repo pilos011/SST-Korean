@@ -1,0 +1,132 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build - Super Star Trek",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-O2",
+                "-Wno-unused-result",
+                "-Wno-unused-variable",
+                "-Wno-unused-function",
+                "-Wno-multichar",
+                "-Wno-array-bounds",
+                "-finput-charset=UTF-8",
+                "-fexec-charset=UTF-8",
+                "-Isrc",
+                "src/sst.c",
+                "src/setup.c",
+                "src/battle.c",
+                "src/events.c",
+                "src/finish.c",
+                "src/moving.c",
+                "src/planets.c",
+                "src/reports.c",
+                "src/ai.c",
+                "src/lang.c",
+                "src/win_compat.c",
+                "-o", "sst.exe",
+                "-lm"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true
+            },
+            "problemMatcher": "$gcc",
+            "detail": "Build Windows EXE with MinGW GCC"
+        },
+        {
+            "label": "Build & Run",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-O2",
+                "-Wno-unused-result",
+                "-Wno-unused-variable",
+                "-Wno-unused-function",
+                "-Wno-multichar",
+                "-Wno-array-bounds",
+                "-finput-charset=UTF-8",
+                "-fexec-charset=UTF-8",
+                "-Isrc",
+                "src/sst.c",
+                "src/setup.c",
+                "src/battle.c",
+                "src/events.c",
+                "src/finish.c",
+                "src/moving.c",
+                "src/planets.c",
+                "src/reports.c",
+                "src/ai.c",
+                "src/lang.c",
+                "src/win_compat.c",
+                "-o", "sst.exe",
+                "-lm",
+                "&&",
+                "start",
+                "cmd",
+                "/k",
+                "sst.exe"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true
+            },
+            "problemMatcher": "$gcc",
+            "detail": "Build and run in new window"
+        },
+        {
+            "label": "Debug Build",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-g",
+                "-DDEBUG",
+                "-Wall",
+                "-finput-charset=UTF-8",
+                "-fexec-charset=UTF-8",
+                "-Isrc",
+                "src/sst.c",
+                "src/setup.c",
+                "src/battle.c",
+                "src/events.c",
+                "src/finish.c",
+                "src/moving.c",
+                "src/planets.c",
+                "src/reports.c",
+                "src/ai.c",
+                "src/lang.c",
+                "src/win_compat.c",
+                "-o", "sst_debug.exe",
+                "-lm"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": "$gcc",
+            "detail": "Build with debug symbols"
+        },
+        {
+            "label": "Clean",
+            "type": "shell",
+            "command": "cmd",
+            "args": ["/c", "if exist sst.exe del sst.exe && if exist sst_debug.exe del sst_debug.exe && echo Done"],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
