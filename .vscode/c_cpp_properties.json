@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "name": "Win32 (MinGW)",
+            "includePath": [
+                "${workspaceFolder}/src",
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_WIN32",
+                "WIN32",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "gcc",
+            "cStandard": "c99",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-gcc-x64",
+            "compilerArgs": [
+                "-finput-charset=UTF-8"
+            ]
+        }
+    ],
+    "version": 4
+}
